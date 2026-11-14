@@ -4,7 +4,7 @@
  */
 const CONFIG = {
   website: "https://www.yanatourslanka.com/",
-  whatsappNumber: "" // Example: "94771234567" — replace with your real business number.
+  whatsappNumber: "94756360424" // Yana Tours Lanka business WhatsApp, confirmed on the official website.
 };
 const STORAGE_KEY = "yanaJarvisLeads_v1";
 let leads = loadLeads();
