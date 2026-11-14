@@ -1,4 +1,4 @@
-name: Deploy website and JARVIS dashboard to GitHub Pages
+name: Deploy Yana Tours Lanka JARVIS dashboard
 on:
   push:
     branches: [main]
@@ -24,10 +24,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Upload repository site
+      - name: Upload JARVIS dashboard only
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: './jarvis-yana-tours-lanka'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
