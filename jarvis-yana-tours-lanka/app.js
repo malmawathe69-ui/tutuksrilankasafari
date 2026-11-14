@@ -48,7 +48,7 @@ function addLead(data) {
 $("leadForm").addEventListener("submit", e => {
   e.preventDefault();
   const url = $("leadUrl").value.trim();
-  try { new URL(url); } catch { toast("Please enter a valid public post URL."); return; }
+  try { const parsed = new URL(url); if (!["http:", "https:"].includes(parsed.protocol)) throw new Error("Unsupported URL scheme"); } catch { toast("Please enter a valid http or https post URL."); return; }
   addLead({url, need:$("leadNeed").value.trim(), country:$("leadCountry").value.trim(), travelDate:$("leadDate").value.trim(), intent:$("leadIntent").value, platform:$("leadSource").value});
   e.target.reset();
 });
@@ -83,7 +83,7 @@ $("leadFilter").addEventListener("input", render);
 $("searchBtn").addEventListener("click", () => {
   const topic = $("searchTopic").value;
   const platform = $("searchPlatform").value;
-  const q = encodeURIComponent(topic + " after:2026-01-01");
+  const q = encodeURIComponent(topic + " after:" + new Date().getFullYear() + "-01-01");
   const urls = {
     all: [
       "https://www.google.com/search?q=" + encodeURIComponent(topic + " Sri Lanka travel"),
