@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#08111f">
+  <title>JARVIS AI | Yana Tours Lanka</title>
+  <meta name="description" content="Free customer research and lead management dashboard for Yana Tours Lanka.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-mark">J</span>
+        <span><strong>JARVIS AI</strong><small>YANA TOURS LANKA</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <a class="nav-item active" href="#overview">▦ <span>Overview</span></a>
+      <a class="nav-item" href="#research">⌕ <span>Find customers</span></a>
+      <a class="nav-item" href="#leads">♙ <span>Lead pipeline</span></a>
+      <a class="nav-item" href="#outreach">✉ <span>Reply studio</span></a>
+      <a class="nav-item" href="#traffic">↗ <span>Website traffic</span></a>
+      <div class="sidebar-note">
+        <span class="status-dot"></span> LOCAL MODE ACTIVE
+        <p>Your leads stay in this browser. Export backups regularly.</p>
+      </div>
+      <div class="side-footer">FREE EDITION · HUMAN APPROVAL</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow">CUSTOMER ACQUISITION SYSTEM</div><h1>Good day. Let's find travellers.</h1><p class="muted">Discover public travel conversations and turn genuine interest into enquiries.</p></div>
+        <div class="top-actions"><span class="pill"><i class="status-dot"></i> System ready</span><a class="button button-primary" href="https://www.yanatourslanka.com/" target="_blank" rel="noopener">Open website ↗</a></div>
+      </header>
+
+      <section id="overview" class="stats-grid">
+        <article class="stat-card"><span class="stat-icon">♙</span><span class="stat-label">TOTAL LEADS</span><strong id="statLeads">0</strong><small>Saved in this browser</small></article>
+        <article class="stat-card"><span class="stat-icon">🔥</span><span class="stat-label">HOT LEADS</span><strong id="statHot">0</strong><small>High buying intent</small></article>
+        <article class="stat-card"><span class="stat-icon">✉</span><span class="stat-label">REPLIES APPROVED</span><strong id="statApproved">0</strong><small>Ready for you to send</small></article>
+        <article class="stat-card"><span class="stat-icon">↗</span><span class="stat-label">WEBSITE CLICKS</span><strong id="statClicks">—</strong><small>Connect analytics to measure</small></article>
+      </section>
+
+      <section class="content-grid">
+        <article id="research" class="panel research-panel">
+          <div class="panel-heading"><div><div class="eyebrow">01 / DISCOVERY</div><h2>Find people planning Sri Lanka</h2><p class="muted">Open targeted public searches. Review each post before saving or replying.</p></div><span class="tag">FREE SEARCH</span></div>
+          <div class="search-controls">
+            <label>Search phrase<select id="searchTopic">
+              <option value="planning a trip to Sri Lanka">Planning a Sri Lanka trip</option>
+              <option value="looking for a private driver in Sri Lanka">Need a private driver</option>
+              <option value="Sri Lanka itinerary 7 days">Sri Lanka itinerary</option>
+              <option value="Kandy Sigiriya Ella tour">Kandy, Sigiriya and Ella</option>
+              <option value="Sri Lanka family holiday">Family holiday</option>
+              <option value="Sri Lanka honeymoon trip">Honeymoon</option>
+              <option value="Sri Lanka airport transfer">Airport transfer</option>
+              <option value="Sri Lanka safari tour">Safari tour</option>
+            </select></label>
+            <label>Platform<select id="searchPlatform">
+              <option value="all">All search sources</option>
+              <option value="reddit">Reddit</option>
+              <option value="facebook">Facebook public pages</option>
+              <option value="instagram">Instagram public pages</option>
+              <option value="threads">Threads</option>
+              <option value="x">X / Twitter</option>
+              <option value="tripadvisor">Travel forums</option>
+              <option value="web">General web</option>
+            </select></label>
+            <button id="searchBtn" class="button button-primary full">Search public conversations ↗</button>
+          </div>
+          <div class="source-chips"><span>Suggested markets</span><b>Germany</b><b>Switzerland</b><b>UK</b><b>Italy</b><b>France</b><b>Australia</b><b>Netherlands</b></div>
+          <div class="notice"><strong>How discovery works</strong><p>Search engines show indexed public pages, not every social post. Some platforms require login and limit access. JARVIS does not access private accounts, collect hidden personal data or send unsolicited messages.</p></div>
+        </article>
+
+        <article class="panel quick-panel">
+          <div class="eyebrow">02 / QUICK CAPTURE</div><h2>Save a potential customer</h2>
+          <p class="muted">Paste a public post URL and record the travel request.</p>
+          <form id="leadForm" class="form-stack">
+            <label>Post or discussion URL<input id="leadUrl" type="url" placeholder="https://..." required></label>
+            <label>What are they looking for?<input id="leadNeed" placeholder="e.g. private driver for 8 days" required></label>
+            <div class="two-fields"><label>Country<input id="leadCountry" placeholder="e.g. Germany"></label><label>Travel date<input id="leadDate" placeholder="e.g. March 2027"></label></div>
+            <div class="two-fields"><label>Intent<select id="leadIntent"><option value="hot">Hot – asks to book / hire</option><option value="warm" selected>Warm – planning / comparing</option><option value="early">Early – general research</option></select></label><label>Platform<select id="leadSource"><option>Reddit</option><option>Facebook</option><option>Instagram</option><option>Threads</option><option>X</option><option>Travel forum</option><option>Other</option></select></label></div>
+            <button class="button button-primary full" type="submit">＋ Save lead</button>
+          </form>
+        </article>
+      </section>
+
+      <section id="leads" class="panel leads-panel">
+        <div class="panel-heading"><div><div class="eyebrow">03 / PIPELINE</div><h2>Customer leads</h2><p class="muted">Review, qualify and follow up. No messages are sent automatically.</p></div><div class="table-actions"><input id="leadFilter" class="filter-input" placeholder="Filter leads..."><button id="exportBtn" class="button button-outline">Export CSV ↓</button></div></div>
+        <div class="table-wrap"><table><thead><tr><th>LEAD / REQUEST</th><th>MARKET</th><th>INTENT</th><th>STATUS</th><th>ADDED</th><th>ACTION</th></tr></thead><tbody id="leadRows"><tr><td colspan="6" class="empty-state">No leads yet. Start with a public search above and save a relevant conversation.</td></tr></tbody></table></div>
+      </section>
+
+      <section class="content-grid lower-grid">
+        <article id="outreach" class="panel">
+          <div class="eyebrow">04 / HUMAN-APPROVED OUTREACH</div><h2>Reply studio</h2>
+          <p class="muted">Select a lead in the pipeline to prepare a relevant response. Always check the platform's rules before replying.</p>
+          <div class="reply-box"><label>Draft message<textarea id="replyText" rows="6" placeholder="Choose a lead and generate a draft..."></textarea></label><div class="reply-actions"><button id="draftBtn" class="button button-outline">Generate reply</button><button id="copyBtn" class="button button-primary">Copy reply</button></div></div>
+          <p class="tiny-note">Personal, relevant replies only. Do not spam or mass-message people who have not invited contact.</p>
+        </article>
+        <article id="traffic" class="panel">
+          <div class="eyebrow">05 / CONVERSION</div><h2>Send visitors to Yana Tours</h2>
+          <p class="muted">Use tagged links to identify visits from your JARVIS campaigns in website analytics.</p>
+          <div class="link-preview"><span>YOUR TRACKING LINK</span><code id="trackingUrl">https://www.yanatourslanka.com/?utm_source=jarvis&amp;utm_medium=organic&amp;utm_campaign=lead_research</code><button id="copyLinkBtn" class="button button-outline full">Copy tracking link</button></div>
+          <a class="button button-primary full" href="https://www.yanatourslanka.com/" target="_blank" rel="noopener">Visit Yana Tours Lanka ↗</a>
+          <a id="whatsappLink" class="button button-whatsapp full" href="https://wa.me/?text=Hello%20Yana%20Tours%20Lanka%2C%20I%20would%20like%20to%20plan%20a%20Sri%20Lanka%20trip." target="_blank" rel="noopener">Open WhatsApp enquiry ↗</a>
+          <p class="tiny-note">Add your verified business WhatsApp number to the configuration in app.js to use a direct chat link.</p>
+        </article>
+      </section>
+
+      <footer><span>JARVIS AI · YANA TOURS LANKA</span><span>Free static dashboard · Data stored on this device</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
