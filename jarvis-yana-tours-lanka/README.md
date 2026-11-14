@@ -1,39 +1,42 @@
 # JARVIS AI — Yana Tours Lanka
 
-A free, static lead-research and customer follow-up dashboard.
+A free, semi-automatic lead research and customer follow-up dashboard for Yana Tours Lanka.
 
-## What it does
-- Opens targeted searches for public conversations about Sri Lanka travel.
-- Lets you manually save public post URLs and customer requirements.
-- Scores intent as Hot / Warm / Early.
-- Generates a contextual reply draft for human review.
-- Tracks lead status (New / Approved / Contacted / Booked).
+## Current features
+- Opens targeted public-web searches for people discussing Sri Lanka travel plans.
+- Lets you manually save a public post URL, customer requirement, country and travel date.
+- Labels leads Hot / Warm / Early based on the operator's selected intent.
+- Drafts a personalised first response for human review.
+- Tracks New / Approved / Contacted / Booked.
 - Exports leads to CSV.
-- Creates a tagged website link and WhatsApp enquiry link.
+- Creates a tagged link to the official Yana Tours Lanka website and a WhatsApp enquiry link.
 
 ## Run locally
-Open `index.html` in a modern browser. No build step, server, paid AI API or API key is required.
+Open `index.html` in a modern browser. No build step, paid AI API or API key is required.
 
-## Deploy with GitHub Pages
-This project lives in `jarvis-yana-tours-lanka/` inside the repository.
-1. In GitHub, open **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select branch `main` and folder `/ (root)` only if you move these files to the repository root. Otherwise use the included GitHub Actions workflow if configured, or publish this folder as the Pages artifact.
-4. The direct static URL will be `https://malmawathe69-ui.github.io/tutuksrilankasafari/jarvis-yana-tours-lanka/` if the repository's Pages site is enabled and the repository is published under that account.
+## Publish on GitHub Pages
+1. Open the repository **Settings → Pages**.
+2. Under **Build and deployment → Source**, select **GitHub Actions**.
+3. Open the **Actions** tab and run **Deploy Yana Tours Lanka JARVIS dashboard** (or push a change inside this folder).
+4. After the workflow succeeds, open the Pages URL shown in **Settings → Pages**.
 
-## Configure WhatsApp
-Edit `app.js` and set `CONFIG.whatsappNumber` to your verified business number in international digits, without +, spaces or dashes. Example format: `9477XXXXXXX`. Do not use the example number.
+The workflow publishes **only this JARVIS folder**. It does not publish or replace the yellow Tuk Tuk Sri Lanka website files. The GitHub Pages URL still contains the existing repository name because the project currently lives inside that repository. For a completely clean URL, create a separate public repository named `yana-tours-lanka-jarvis` and move this folder's files to its root, or configure a custom subdomain after creating a separate repository.
+
+## Business configuration
+- Website: https://www.yanatourslanka.com/
+- WhatsApp: configured in `app.js` as `94756360424`.
+- Keep the WhatsApp number in international digits with no plus sign or spaces.
 
 ## Data and privacy
-Lead records are saved in this browser's localStorage. They are not synchronised between devices. Use **Export CSV** for backups. Do not enter sensitive personal information. Save only information relevant to a public travel enquiry and follow each platform's terms.
+Leads are stored in this browser's localStorage. They do not synchronise between devices or users. Export CSV regularly for backup. Do not enter sensitive personal information.
 
-## Important limitations
-This is a research assistant, not a private-data scraper or autonomous social-media bot. Search results depend on indexing and platform access. It does not know who privately searched Google, cannot guarantee every potential customer is found, and does not automatically post, comment, DM or send email. The operator must review each lead and approve any outreach.
+## What semi-automatic means
+This is a free research and lead-management assistant, not an autonomous AI crawler. It opens searches of publicly accessible/indexed content. You must inspect the post, decide whether it is a genuine travel enquiry, and approve any reply. It does not access private groups, reveal private searchers, scrape private data, or automatically comment, DM, email or post. Platform access and search indexing vary.
 
 ## Analytics
-The tagged link uses:
+The website link includes UTM tags:
 - `utm_source=jarvis`
 - `utm_medium=organic`
 - `utm_campaign=lead_research`
 
-Use Google Analytics or another website analytics tool to measure visits. Dashboard click counts are not fabricated or inferred.
+Connect Google Analytics to the business website to measure actual visits and enquiries. JARVIS does not invent website traffic or booking numbers.
